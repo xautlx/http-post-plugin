@@ -1,0 +1,10 @@
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
+  <f:section title="${%HTTP POST Plugin}">
+    <f:entry title="${%URL}" field="url">
+      <f:textbox name="url"/>
+    </f:entry>
+    <f:entry title="${%Additional headers}" field="headers">
+      <f:textarea name="headers"/>
+    </f:entry>
+  </f:section>
+</j:jelly>
