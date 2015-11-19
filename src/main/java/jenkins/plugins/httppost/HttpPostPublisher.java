@@ -87,6 +87,9 @@ public class HttpPostPublisher extends Notifier {
 
             Request.Builder builder = new Request.Builder();
             builder.url(url);
+            String svn = System.getenv("SVN_REVISION");
+            listener.getLogger().println(String.format("---> SVN_REVISION %s", svn));
+            builder.header("SVN_REVISION", svn);
             builder.header("Job-Name", build.getProject().getName());
             builder.header("Build-Number", String.valueOf(build.getNumber()));
             builder.header("Build-Timestamp", String.valueOf(build.getTimeInMillis()));
